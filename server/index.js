@@ -11,6 +11,13 @@ app.post('/api/hello', (req, res) => {
   res.json({ message: `Hello, ${name}` });
 });
 
+const path = require('path');
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });
