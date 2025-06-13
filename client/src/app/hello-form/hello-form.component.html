@@ -1,0 +1,6 @@
+<div style="padding: 2rem">
+  <input [(ngModel)]="name" placeholder="Enter your name" />
+  <button (click)="submit()">Say Hello</button>
+
+  <p *ngIf="response">{{ response }}</p>
+</div>
